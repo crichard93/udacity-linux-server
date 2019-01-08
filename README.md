@@ -20,15 +20,16 @@ Add user to sudo group:
 [Reference](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)  
   
 ## Remove Password Request for user grader When Using Sudo  
-Open the **/etc/sudoers** file:
+Open the **/etc/sudoers** file:  
 `sudo visudo`  
+
 Add the following line to the bottom of the file:  
 `grader ALL=(ALL) NOPASSWD: ALL`  
   
 [Reference](https://askubuntu.com/questions/147241/execute-sudo-without-password)  
 
 ## Update System Packages  
-Search for package updates:
+Search for package updates:  
 `sudo apt-get update`  
   
 Apply updates:  
@@ -55,17 +56,17 @@ Change the line from `PermitRootLogin prohibit-password` to `PermitRootLogin no`
 
 Additionally, ensure the line `PasswordAuthentication no` is in the file. If not, change the yes to a no. The default for Lightsail instances is no. 
 
-Enter the following to reset the ssh service and implement changes:
+Enter the following to reset the ssh service and implement changes:  
 `sudo service ssh restart` 
 
 ## Change SSH Port to 2200 from 22 
-Edit config file:
-`sudo nano /etc/ssh/sshd_config`
-Change line from `Port 22` to `Port 2200`
-Restart SSH: 
+Edit config file:  
+`sudo nano /etc/ssh/sshd_config`  
+Change line from `Port 22` to `Port 2200`  
+Restart SSH:  
 `sudo service ssh restart` 
 
-From now on, you must connect using Post 2200: 
+From now on, you must connect using Post 2200:  
 `ssh grader@34.232.193.51 -p 2200 -i ~/.ssh/udacity_key.pem`
 
 ## Update Lightsail Firewall Settings and IP Address
@@ -95,7 +96,8 @@ Before you turn on the firewall check that the intended rules were added:
 Provided the rules were added as intended, enable the firewall:  
 `sudo ufw enable`  
 
-Now, try logging into the server on a new terminal on your local computer using `ssh grader@34.232.193.51 -p 2200 -i ~/.ssh/udacity_key.pem` to make sure you did not block yourself out!
+Now, try logging into the server on a new terminal on your local computer using `ssh grader@34.232.193.51 -p 2200 -i ~/.ssh/udacity_key.pem` to make sure you did not block yourself out!  
+
 [Allow NTP Reference](https://askubuntu.com/questions/709843/how-to-configure-ufw-to-allow-ntp-to-work)
 
 ## Update timezone to UTC  
@@ -103,7 +105,6 @@ Change timezone:
 `sudo timedatectl set-timezone UTC`
 
 # Configure Server to Host Web Application  
-
 ## Install Required Packages and Applications  
 Apache:  
 `sudo apt-get install apache2`  
@@ -201,7 +202,8 @@ to:
 ```
 Finally, save the updated **project_server.py** file as **__init__.py** to initialize the application when the web page is visited.  
 
-Next, update **populate_car_database.py** and **database_setup.py** with the same line from **2** above, minus the initial `?check_same_thread=False`.
+Next, update **populate_car_database.py** and **database_setup.py** with the same line from **2** above, minus the initial `?check_same_thread=False`.  
+  
 [Reference for accessing database URLs with SQLAlchemy](https://docs.sqlalchemy.org/en/rel_1_0/core/engines.html#postgresql)
 
 ## Populate the Database for the Server  
