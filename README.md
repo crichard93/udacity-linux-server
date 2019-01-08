@@ -182,7 +182,7 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Item Catalog Application"
 ```
 2. From:  
-`engine = create_engine('sqlite:///cars.db?check_same_thread=False')`
+`engine = create_engine('sqlite:///cars.db?check_same_thread=False')`  
 to  
 `engine = create_engine('postgresql://cars:udacity@localhost/cars')`
 
@@ -203,7 +203,7 @@ to:
 Finally, save the updated **project_server.py** file as **__init__.py** to initialize the application when the web page is visited.  
 
 Next, update **populate_car_database.py** and **database_setup.py** with the same line from **2** above, minus the initial `?check_same_thread=False`.  
-  
+
 [Reference for accessing database URLs with SQLAlchemy](https://docs.sqlalchemy.org/en/rel_1_0/core/engines.html#postgresql)
 
 ## Populate the Database for the Server  
