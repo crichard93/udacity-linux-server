@@ -278,3 +278,5 @@ Refresh Apache to implement the changes:
 [Reference for setting up apache2](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts)
 
 [Reference for setting up xip.io DNS](https://stackoverflow.com/questions/12570759/how-to-use-xip-io-with-several-virtualhosts-and-server-names-local-dev)
+# And That Is All Folks!
+Your application will be availabe at your URL and IP address. Mine is at [cory.linuxserver.34.232.193.51.xip.io](cory.linuxserver.34.232.193.51.xip.io) 
