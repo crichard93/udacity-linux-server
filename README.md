@@ -33,7 +33,12 @@ Search for package updates:
 `sudo apt-get update`  
   
 Apply updates:  
-`sudo apt-get upgrade`  
+`sudo apt-get upgrade` 
+
+Apply further updates with the following command, which allows Ubuntu to remove necessary packages for updates:
+`sudo apt-get dist-upgrade` 
+
+[`dist-upgrade` Reference](https://askubuntu.com/questions/81585/what-is-dist-upgrade-and-why-does-it-upgrade-more-than-upgrade)
 
 ## Allow user grader to Use SSH Key to Login  
 Enter the following commands to enable SSH key login for user grader:
